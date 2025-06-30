@@ -1,17 +1,14 @@
 
 import './App.css'
-import Button from './components/Buttons/Button'
+import TextInputFormContainer from './components/TextInputForm/TextInputFormContainer'
+
 
 function App() {
  
   return (
     <>
       <div>
-        <Button 
-          type="submit"
-          styleType="primary"
-          text="Submit"
-        />
+        <TextInputFormContainer />
       </div>
     </>
   )

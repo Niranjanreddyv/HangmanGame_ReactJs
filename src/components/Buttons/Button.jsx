@@ -1,9 +1,11 @@
 import getStyledButton from "./getStyledButton";
 
-function Button({styleType='primary', text}){
+function Button({styleType="primary", text ,onClickHandler, type = "button"}){
     return (
         <button
-            className={`px-2 py-1 ${getStyledButton(styleType)} border rounded-md hover:bg-green-500`}
+            onClick = {onClickHandler}
+            type={type}
+            className={`px-2 py-1  text-white ${getStyledButton(styleType)} border rounded-md hover:bg-green-500`}
         >{text}</button>
     )
 }
