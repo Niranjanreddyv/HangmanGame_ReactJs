@@ -15,7 +15,7 @@ function TextInputFormContainer() {
 
         if(value){
             // if we have something valid we want to go to the play game page
-            navigate("/play");
+            navigate("/play", {state : {wordSelected : value}});
 
         }
 
