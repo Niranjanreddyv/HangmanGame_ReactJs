@@ -3,7 +3,10 @@ import React from 'react'
 function TextInput({type = "text", label, placeholder = "Enter your input here", onChangeHandler}) {
   return (
     <label >
-        <span className='text-gray-700'>{label}</span>
+        <h1 className="text-xl font-semibold">
+            <span className="text-indigo-600">{label}</span>
+        </h1>
+        
 
         <input 
             type={type}

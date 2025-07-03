@@ -2,7 +2,7 @@ import React from 'react'
 import TextInput from '../TextInput/TextInput'
 import Button from '../Buttons/Button'
 
-function TextInputForm({inputType, handleFormSubmit, handleTextInputChange,handleShowHideClick}) {
+function TextInputForm({inputType, handleFormSubmit, handleTextInputChange,handleShowHideClick,handleTextInputOfHintChages}) {
 
 
   return (
@@ -13,6 +13,12 @@ function TextInputForm({inputType, handleFormSubmit, handleTextInputChange,handl
                 label="Enter a word or a phrase"
                 placeholder='Enter a word or phrase here ....'
                 onChangeHandler={handleTextInputChange}
+            />
+            <TextInput
+                type="text"
+                label="Hint"
+                placeholder='Enter a Hint'
+                onChangeHandler={handleTextInputOfHintChages}
             />
         </div>
         <div>

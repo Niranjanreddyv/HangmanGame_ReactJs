@@ -16,7 +16,8 @@ function PlayGame() {
     if(state.wordSelected.toUpperCase().includes(letter)){
       console.log("correct");
     }else{
-      setStep(step+1);
+      
+      setStep(step+1); 
       console.log("Wrong");
     }
     setGussedLetters([...guessedLetters, letter]);
@@ -25,17 +26,41 @@ function PlayGame() {
 
   return (
     <>
-        <div>PlayGame {state.wordSelected}</div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 min-h-screen bg-gray-100">
+            {/* Game Area */}
+            <div className="w-full max-w-md bg-white border border-gray-300 rounded-md shadow-md p-6 space-y-4 text-center mx-auto">
+              <h2 className="text-xl font-semibold text-gray-700">
+                PlayGame: <span className="text-indigo-600">{state.hintWord}</span>
+              </h2>
 
-        <MaskedText text={state.wordSelected} guessedLetters={guessedLetters}/>
+              <MaskedText text={state.wordSelected} guessedLetters={guessedLetters} />
 
-        <div>
-          <LetterButtons text = {state.wordSelected} guessedLetters={guessedLetters} onLetterClick={handleLetterClick} />
+              <div>
+                <LetterButtons
+                  text={state.wordSelected}
+                  guessedLetters={guessedLetters}
+                  onLetterClick={handleLetterClick}
+                />
+              </div>
+            </div>
+
+            {/* Hangman Area */}
+            <div className="w-full max-w-md bg-white border border-gray-300 rounded-md shadow-md p-6 space-y-4 text-center mx-auto">
+              <HangMan step={step} />
+
+              <Link
+                to="/start"
+                className="inline-block mt-4 text-blue-600 hover:underline font-medium"
+              >
+                Start Game Link
+              </Link>
+            </div>
         </div>
-        <div>
-          <HangMan step = {step} />
-        </div>
-        <Link to = "/start" className='text-blue-400'>Start game Link</Link>
+
+
+        
+        
+        
 
 
 
