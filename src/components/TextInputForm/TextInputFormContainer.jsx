@@ -43,6 +43,10 @@ function TextInputFormContainer() {
         }
         console.log(inputType);
     }
+
+
+
+
   return (
     <TextInputForm 
         inputType={inputType}
